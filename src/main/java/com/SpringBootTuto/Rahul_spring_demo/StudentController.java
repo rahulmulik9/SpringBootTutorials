@@ -1,14 +1,14 @@
 package com.SpringBootTuto.Rahul_spring_demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping( "api")
 public class StudentController {
 
     @Autowired
@@ -21,7 +21,26 @@ public class StudentController {
 
     @GetMapping("/all")
     public List<StudentEntity> getAllStudent(){
-     List<StudentEntity> list = studentService.getAllStudent();
-     return list;
+     List<StudentEntity> studentList = studentService.getAllStudent();
+     return studentList ;
     }
+
+    @PostMapping("/save")
+    public StudentEntity createStudent(@RequestBody StudentEntity studentEntity){
+        StudentEntity student= studentService.createStudent(studentEntity);
+        return student;
+    }
+//
+//    @DeleteMapping("/delet/{id}")
+//    public String deletStudent(@PathVariable Long id){
+//        String resp =studentService.deletStudent(id);
+//        return resp;
+//
+//    }
+//
+//    @PutMapping("/update/{id}")
+//    public StudentEntity updateStudent(@PathVariable long id ,@RequestBody StudentEntity student){
+//        StudentEntity studentnew= studentService.updateStudent(id,student);
+//        return studentnew;
+//    }
 }
