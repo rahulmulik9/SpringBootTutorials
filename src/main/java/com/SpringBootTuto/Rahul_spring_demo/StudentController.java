@@ -31,12 +31,12 @@ public class StudentController {
         return student;
     }
 //
-//    @DeleteMapping("/delet/{id}")
-//    public String deletStudent(@PathVariable Long id){
-//        String resp =studentService.deletStudent(id);
-//        return resp;
-//
-//    }
+    @DeleteMapping("/delet/{id}")
+    public String deletStudent(@PathVariable Long id){
+        String resp =studentService.deletStudent(id);
+        return resp;
+
+    }
 //
 //    @PutMapping("/update/{id}")
 //    public StudentEntity updateStudent(@PathVariable long id ,@RequestBody StudentEntity student){

@@ -28,14 +28,14 @@ public class StudentService {
         studentRepository.save(studentEntity);
         return studentEntity;
     }
-//
-//    public String deletStudent(Long id) {
-//        StudentEntity studentdelet = new StudentEntity();
-//        studentdelet = studentRepository.findById(id).get();
-//        studentRepository.delete(studentdelet);
-//        String res="True";
-//        return res  ;
-//    }
+
+    public String deletStudent(Long id) {
+        StudentEntity studentdelet = new StudentEntity();
+        studentdelet = studentRepository.findById(id).get();
+        studentRepository.delete(studentdelet);
+        String res="True";
+        return res  ;
+    }
 //
 //    public StudentEntity updateStudent(long id, StudentEntity student) {
 //        StudentEntity studentNew = studentRepository.findById(id).get();
