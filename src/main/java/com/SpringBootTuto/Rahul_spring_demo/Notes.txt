@@ -1,0 +1,12 @@
+There are four main classes
+1) Controller
+2) Repository
+3) Entity
+4) Service
+
+Controller : Contain API which are public and contains mapping..contain object of service class(@Autowire)... @RestController @RequestMapping("api/v1/")
+Repository : interface which extends JpaRepository<T(entity),ID(id)>.. @Repository
+Entity : Contains data present in object (eg id, name)..@Entity @Data @Table(name ="table_name")
+Service : Contains actual implementation of methods ..contain class of repository(@Autowire)..@Service
+
+When api hit..first it will go to controller then it will go to service...in service we call Repository methods
