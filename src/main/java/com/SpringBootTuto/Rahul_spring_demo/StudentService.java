@@ -36,13 +36,13 @@ public class StudentService {
         String res="True";
         return res  ;
     }
-//
-//    public StudentEntity updateStudent(long id, StudentEntity student) {
-//        StudentEntity studentNew = studentRepository.findById(id).get();
-//        studentNew.setStudentName(student.getStudentName());
-//        studentNew.setStudentSubject(student.getStudentSubject());
-//        studentRepository.save(studentNew);
-//        return  studentNew;
-//
-//    }
+
+    public StudentEntity updateStudent(long id, StudentEntity student) {
+        StudentEntity studentNew = studentRepository.findById(id).get();
+        studentNew.setStudentName(student.getStudentName());
+        studentNew.setStudentSubject(student.getStudentSubject());
+        studentRepository.save(studentNew);
+        return  studentNew;
+
+    }
 }

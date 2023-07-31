@@ -30,17 +30,17 @@ public class StudentController {
         StudentEntity student= studentService.createStudent(studentEntity);
         return student;
     }
-//
+
     @DeleteMapping("/delet/{id}")
     public String deletStudent(@PathVariable Long id){
         String resp =studentService.deletStudent(id);
         return resp;
 
     }
-//
-//    @PutMapping("/update/{id}")
-//    public StudentEntity updateStudent(@PathVariable long id ,@RequestBody StudentEntity student){
-//        StudentEntity studentnew= studentService.updateStudent(id,student);
-//        return studentnew;
-//    }
+
+    @PutMapping("/update/{id}")
+    public StudentEntity updateStudent(@PathVariable long id ,@RequestBody StudentEntity student){
+        StudentEntity studentnew= studentService.updateStudent(id,student);
+        return studentnew;
+    }
 }
